@@ -20,6 +20,40 @@ class Stack<T> {
     }
 
     /**
+     *
+     * @desc Peeks at the element on the top of the stack.
+     * @return The element at the top of the stack.
+     */
+    public T peek() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty");
+        }
+        return list.getFirst();
+    }
+
+    /**
+     *
+     * @desc Pops an element from the stack.
+     * @return The element popped from the stack.
+     */
+    public T pop() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty");
+        }
+        return list.removeFirst();
+    }
+
+    /**
+     *
+     * @desc Checks if the stack is empty.
+     * @return true if the stack is empty, false otherwise.
+     */
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+
+    /**
+     *
      * @desc Prints the elements of the stack.
      */
     public void printStack() {
@@ -44,5 +78,12 @@ public class StackAndQueue {
         // Printing the initial stack
         System.out.println("Initial Stack:");
         integerStack.printStack();
+
+        // Peeking and popping elements from the stack until it is empty
+        System.out.println("Peek and Pop until the stack is empty:");
+        while (!integerStack.isEmpty()) {
+            System.out.println("Peek: " + integerStack.peek());
+            System.out.println("Pop: " + integerStack.pop());
+        }
     }
 }
