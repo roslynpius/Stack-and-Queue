@@ -16,7 +16,7 @@ class Stack<T> {
      */
     public void push(T data) {
         // Adding the element to the front of the LinkedList
-        list.add(data);
+        list.addFirst(data);
     }
 
     /**
@@ -37,9 +37,9 @@ public class StackAndQueue {
         Stack<Integer> integerStack = new Stack<>();
 
         // Pushing elements onto the stack
-        integerStack.push(56);
-        integerStack.push(30);
         integerStack.push(70);
+        integerStack.push(30);
+        integerStack.push(56);
 
         // Printing the initial stack
         System.out.println("Initial Stack:");
