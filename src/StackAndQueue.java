@@ -1,63 +1,30 @@
 import java.util.LinkedList;
 
-// Generic class for implementing Stack using a LinkedList
-class Stack<T> {
+// Generic class for implementing Queue using a LinkedList
+class Queue<T> {
     private LinkedList<T> list;
 
     // Constructor to initialize the LinkedList
-    public Stack() {
+    public Queue() {
         list = new LinkedList<>();
     }
 
     /**
      *
-     * @param data The element to be pushed onto the stack.
-     * @desc Pushes an element onto the stack.
+     * @param data The element to be enqueued.
+     * @desc Enqueues an element into the queue.
      */
-    public void push(T data) {
-        // Adding the element to the front of the LinkedList
-        list.addFirst(data);
+    public void enqueue(T data) {
+        // Adding the element to the end of the LinkedList
+        list.add(data);
     }
 
     /**
      *
-     * @desc Peeks at the element on the top of the stack.
-     * @return The element at the top of the stack.
+     * @desc Prints the elements of the queue.
      */
-    public T peek() {
-        if (isEmpty()) {
-            System.out.println("Stack is empty");
-        }
-        return list.getFirst();
-    }
-
-    /**
-     *
-     * @desc Pops an element from the stack.
-     * @return The element popped from the stack.
-     */
-    public T pop() {
-        if (isEmpty()) {
-            System.out.println("Stack is empty");
-        }
-        return list.removeFirst();
-    }
-
-    /**
-     *
-     * @desc Checks if the stack is empty.
-     * @return true if the stack is empty, false otherwise.
-     */
-    public boolean isEmpty() {
-        return list.isEmpty();
-    }
-
-    /**
-     *
-     * @desc Prints the elements of the stack.
-     */
-    public void printStack() {
-        System.out.print("Stack: ");
+    public void printQueue() {
+        System.out.print("Queue: ");
         for (T data : list) {
             System.out.print(data + " ");
         }
@@ -67,23 +34,17 @@ class Stack<T> {
 
 public class StackAndQueue {
     public static void main(String[] args) {
-        // Creating a stack of integers
-        Stack<Integer> integerStack = new Stack<>();
+        // Creating a queue of integers
+        Queue<Integer> integerQueue = new Queue<>();
 
-        // Pushing elements onto the stack
-        integerStack.push(70);
-        integerStack.push(30);
-        integerStack.push(56);
+        // Enqueuing elements into the queue
+        integerQueue.enqueue(56);
+        integerQueue.enqueue(30);
+        integerQueue.enqueue(70);
 
-        // Printing the initial stack
-        System.out.println("Initial Stack:");
-        integerStack.printStack();
+        // Printing the initial queue
+        System.out.println("Initial Queue:");
+        integerQueue.printQueue();
 
-        // Peeking and popping elements from the stack until it is empty
-        System.out.println("Peek and Pop until the stack is empty:");
-        while (!integerStack.isEmpty()) {
-            System.out.println("Peek: " + integerStack.peek());
-            System.out.println("Pop: " + integerStack.pop());
-        }
     }
 }
