@@ -21,6 +21,27 @@ class Queue<T> {
 
     /**
      *
+     * @desc Dequeues an element from the queue.
+     * @return The element dequeued from the queue.
+     */
+    public T dequeue() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+        }
+        return list.removeFirst();
+    }
+
+    /**
+     *
+     * @desc Checks if the queue is empty.
+     * @return true if the queue is empty, false otherwise.
+     */
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+
+    /**
+     *
      * @desc Prints the elements of the queue.
      */
     public void printQueue() {
@@ -46,5 +67,10 @@ public class StackAndQueue {
         System.out.println("Initial Queue:");
         integerQueue.printQueue();
 
+        // Dequeuing elements from the queue until it is empty
+        System.out.println("Dequeue until the queue is empty:");
+        while (!integerQueue.isEmpty()) {
+            System.out.println("Dequeue: " + integerQueue.dequeue());
+        }
     }
 }
