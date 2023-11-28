@@ -1,3 +1,5 @@
+package com.bridgelabz.stackandqueue;
+
 import java.util.LinkedList;
 
 // Generic class for implementing Queue using a LinkedList
